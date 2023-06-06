@@ -1,4 +1,6 @@
-# Extraction Tool
+# Scrapper
+
+## Extraction Tool
 
 The Extraction Tool, called Scrapper, is a Python-based application that allows users to extract and process web content from a given URL. It's written with Object Oriented model, follows the Model-View-Controller (MVC) architecture and provides a command-line interface for interaction.
 

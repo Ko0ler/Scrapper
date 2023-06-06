@@ -16,8 +16,8 @@ The Extraction Tool, called Scrapper, is a Python-based application that allows 
 
 ## Future features
 
-- Checking for extraction eligibility and authorization before processing
-- GUI with PyQt for user interaction
+- Best suited algorithm for Checking extraction eligibility and authorization before processing
+- Web based GUI (Graphical User Interface) for user interaction and accessibility
 
 ## License
 This project is licensed under the MIT License.

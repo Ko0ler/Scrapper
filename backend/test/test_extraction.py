@@ -1,11 +1,12 @@
 import pytest
+from unittest import mock
 
 from ..model import Extraction
 
 
 def setup(type_of_extraction):
     """
-    Setup the extraction object.
+    Set up the extraction object.
 
     Args:
     - type_of_extraction (int): Type of extraction to perform.
@@ -50,7 +51,9 @@ def test_save_file():
     Test the saved file
     """
     extraction = setup(1)
-    content = extraction.save_file()
+    # Mock the filedialog.asksaveasfilename() function to return a default file path
+    with mock.patch('tkinter.filedialog.asksaveasfilename', return_value='Extracted_Content_1.txt'):
+        content = extraction.save_file()
 
     assert 'Extracted_Content_1.txt' in str(content)
 

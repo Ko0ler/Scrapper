@@ -11,12 +11,12 @@ APP_AUTHOR = 'Mohamed Ouédraogo'
 APP_DESCRIPTION = 'Extract content from a web page the easiest way !!!'
 # User notes to be displayed
 USER_NOTE = ['Be connected to the internet',
-             'Try not to make too many requests (e.g. over 15),'
+             'Try not to make too many requests,'
              ' as this would be unethical and may result in'
              ' server-side performance issue or even being banned',
              'Be aware that this script is still in development (kinda beta),'
              ' so you may encounter some bugs or unexpected errors',
-             'Mail me at ouedraogomohamed008@gmail.com for any suggestions :)']
+             'Mail me at ouedraogomohamed008@gmail.com for any suggestions ◔◡◔']
 
 # Choices for extraction option
 INTRO_EXTRACTION_CHOICE = ['Download source code', 'Choose a specific option']

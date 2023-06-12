@@ -8,7 +8,7 @@ def show_input_error(error):
     Args:
     - error (str): Error message to be displayed.
     """
-    print(f'\nInput error: {error}')
+    print(f'\nInput error : {error}')
 
 
 def print_options_list(methods):
@@ -43,9 +43,9 @@ class Home:
         print(f'\n\nWelcome to {app_name} {app_version}\n'
               f'Created by {app_author}\n'
               f'\n{app_description}\n')
-        print('\nMake sure to:')
+        print('\nMake sure to :\n')
         print_options_list(self.requirement)
-        print('\nPlease provide necessary information about yourself before proceeding with the extraction')
+        print('\nPlease provide the necessary information about yourself before proceeding with the extraction')
 
     def choose_type_of_extraction(self):
         """
@@ -56,7 +56,7 @@ class Home:
         """
         print('\nWhich process do you prefer?\n')
         print_options_list(self.intro_options_list)
-        return input('\nChoose an option: ')
+        return input('\nChoose an option : ')
 
     def extraction_options(self):
         """
@@ -65,9 +65,9 @@ class Home:
         Returns:
         - str: Selected extraction option index.
         """
-        print('\nHere is a list of options for extracting websites:\n')
+        print('\nHere is a list of options for extracting websites :\n')
         print_options_list(self.extraction_options_list)
-        return input('\nChoose an option: ')
+        return input('\nChoose an option : ')
 
 
 class UserData:
@@ -93,7 +93,7 @@ class UserData:
         Returns:
         - str: User name.
         """
-        return input('\nYour name: ')
+        return input('\nYour name : ')
 
     def user_email(self):
         """
@@ -102,7 +102,7 @@ class UserData:
         Returns:
         - str: User email.
         """
-        return input('\nYour email address: ')
+        return input('\nYour email address : ')
 
     def url(self):
         """
@@ -121,9 +121,9 @@ class UserData:
         Returns:
         - str: Selected saving method index.
         """
-        print('\nSaving method:\n')
+        print('\nSaving method :\n')
         print_options_list(self.options_list)
-        return input(f'\nChoose one: ')
+        return input(f'\nChoose one : ')
 
 
 class DataProcess:
@@ -157,7 +157,7 @@ class DataProcess:
         Args:
         - content (str): Extracted data to be displayed.
         """
-        print(f'\nHere is your extracted data:\n'
+        print(f'\nHere is your extracted data :\n'
               f'\n----------------------------'
               f'\n{content}'
               '\n----------------------------')
@@ -182,7 +182,7 @@ class EndOfProcess:
         Args:
         - number (int): Number of attempts made.
         """
-        print(f'\nNumber of attempt: {number}')
+        print(f'\nNumber of attempt : {number}')
 
     def retry_or_quit(self):
         """
@@ -193,7 +193,7 @@ class EndOfProcess:
         """
         print('\nWhat to do next?\n')
         print_options_list(self.options_list)
-        return input(f'\nChoose one: ')
+        return input(f'\nChoose one : ')
 
     def quit(self):
         """

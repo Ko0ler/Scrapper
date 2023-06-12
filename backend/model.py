@@ -1,6 +1,5 @@
 from abc import ABC
-from tkinter import filedialog
-import tkinter as tk
+from PyQt5.QtWidgets import QApplication, QFileDialog
 
 import requests as rqt
 from bs4 import BeautifulSoup as Bs
@@ -42,6 +41,7 @@ class Model(ABC):
     """
     Base class for the model.
     """
+
     def __init__(self,
                  user_name,
                  user_email,
@@ -93,6 +93,7 @@ class Extraction(Model):
     """
     Class responsible for extraction process.
     """
+
     def source_code(self):
         """
         Extract the source code from the web page.
@@ -137,20 +138,22 @@ class Extraction(Model):
             extracted_data = self.content_extraction()
 
         # Opening the operating system file manager to choose the saving location
-        root = tk.Tk()
-        root.withdraw()
+        app = QApplication([])
+
         default_file_name = f'{SAVING_FILE_NAME}_{self.saving_file_number}.{file_format}'
-        file_path = filedialog.asksaveasfilename(
-            defaultextension=file_format,
-            initialfile=default_file_name,
-            filetypes=[(f'{file_format.upper()} File', f'*.{file_format}')]
+        file_path, _ = QFileDialog.getSaveFileName(
+            caption='Save File',
+            directory=default_file_name,
+            filter=f'{file_format.upper()} Files (*.{file_format})'
         )
 
-        with open(file_path, SAVING_STYLE) as file:
-            file.write(f'Name : {self.user_name}\n'
-                       f'Email : {self.user_email}\n'
-                       f'Time of extraction : {time_of_extraction}\n'
-                       f'URL : {self.url}\n\n\n'
-                       f'Content ({type_of_content_extracted}) :\n\n\n'
-                       f'{extracted_data}')
-            return file
+        if file_path:
+            with open(file_path, SAVING_STYLE) as file:
+                file.write(f'Name : {self.user_name}\n'
+                           f'Email : {self.user_email}\n'
+                           f'Time of extraction : {time_of_extraction}\n'
+                           f'URL : {self.url}\n\n\n'
+                           f'Content ({type_of_content_extracted}) :\n\n\n'
+                           f'{extracted_data}')
+                return file
+        app.exec()

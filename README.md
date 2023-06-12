@@ -14,7 +14,7 @@ The Extraction Tool, called Scrapper, is a Python-based application that allows 
 ## Prerequisites
 
 - Python 3.x
-- Dependencies: requests, BeautifulSoup
+- Dependencies: requests, BeautifulSoup4, PyQt5
 
 ## Future features
 

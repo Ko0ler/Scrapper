@@ -1,4 +1,7 @@
 from abc import ABC
+from tkinter import filedialog
+import tkinter as tk
+
 import requests as rqt
 from bs4 import BeautifulSoup as Bs
 from datetime import datetime
@@ -8,8 +11,7 @@ APP_VERSION = '1.0'
 APP_AUTHOR = 'Mohamed Ouédraogo'
 APP_DESCRIPTION = 'Extract content from a web page the easiest way !!!'
 # User notes to be displayed
-USER_NOTE = ['Run the executable in the folder where you want the output to be downloaded',
-             'Be connected to the internet',
+USER_NOTE = ['Be connected to the internet',
              'Try not to make too many requests (e.g. over 15),'
              ' as this would be unethical and may result in'
              ' server-side performance issue or even being banned',
@@ -133,7 +135,18 @@ class Extraction(Model):
             self.content_extraction()
             type_of_content_extracted = self.type_of_content_extracted
             extracted_data = self.content_extraction()
-        with open(f'{SAVING_FILE_NAME}_{self.saving_file_number}.{file_format}', SAVING_STYLE) as file:
+
+        # Opening the operating system file manager to choose the saving location
+        root = tk.Tk()
+        root.withdraw()
+        default_file_name = f'{SAVING_FILE_NAME}_{self.saving_file_number}.{file_format}'
+        file_path = filedialog.asksaveasfilename(
+            defaultextension=file_format,
+            initialfile=default_file_name,
+            filetypes=[(f'{file_format.upper()} File', f'*.{file_format}')]
+        )
+
+        with open(file_path, SAVING_STYLE) as file:
             file.write(f'Name : {self.user_name}\n'
                        f'Email : {self.user_email}\n'
                        f'Time of extraction : {time_of_extraction}\n'

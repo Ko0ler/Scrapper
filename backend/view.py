@@ -1,4 +1,5 @@
-# Think about creating GUI
+# Console interaction for now ...
+# Gonna think about creating GUI
 
 def show_input_error(error):
     """

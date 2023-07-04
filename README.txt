@@ -4,12 +4,12 @@ tools : python
 functionalities :
  - take user input (name, email, url, content to extract, saving format)
  - extraction
- - saving (html, txt, csv, json, xml)
+ - saving (html, txt, xml)
  - history tracking
 algo :
  1. home page, presentation
  2. prompt to enter user data (name, email)
- 3. user choose an option
+ 3. user chooses an option
  4. prompt to enter extraction data (content to extract, url, saving format)
  5. check for eligibility/authorization
  6. if eligible then :

@@ -11,11 +11,6 @@ The Extraction Tool, called Scrapper, is a Python-based application that allows 
 - Validates user input and handles errors gracefully
 - Provides options for retrying or quitting the extraction process
 
-## Prerequisites
-
-- Python 3.x
-- Dependencies: requests, BeautifulSoup4, PyQt5
-
 ## Future features
 
 - Best-suited algorithm for Checking extraction eligibility and authorization before processing

@@ -1,4 +1,4 @@
-from backend.controller import Control
+from mvc.controller import Control
 
 app = Control()
 

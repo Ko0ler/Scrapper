@@ -9,6 +9,20 @@ APP_NAME = 'Scrapper'
 APP_VERSION = '1.0'
 APP_AUTHOR = 'Mohamed Ouédraogo'
 APP_DESCRIPTION = 'Extract content from a web page the easiest way !!!'
+def banner():
+    result = ''
+    model = [
+    '      ___|                                       \n',
+    '    \___ \   __|  __| _` | __ \  __ \   _ \  __| \n',
+    '          | (    |   (   | |   | |   |  __/ |    \n',
+    '    _____/ \___|_|  \__,_| .__/  .__/ \___|_|    \n',
+    '                          _|    _|               \n'
+    ]
+
+    for line in model:
+        result += line
+    return result
+BANNER = banner()
 # User notes to be displayed
 USER_NOTE = ['Be connected to the internet',
              'Try not to make too many requests,'

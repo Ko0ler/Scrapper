@@ -36,13 +36,14 @@ class Home:
         self.intro_options_list = intro_options_list
         self.extraction_options_list = extraction_options_list
 
-    def intro(self, app_name, app_version, app_author, app_description):
+    def intro(self, app_name, app_version, app_author, app_description, banner):
         """
         Display the introduction screen.
         """
         print(f'\n\nWelcome to {app_name} {app_version}\n'
               f'Created by {app_author}\n'
-              f'\n{app_description}\n')
+              f'\n{app_description}\n\n'
+              f'\n{banner}')
         print('\nMake sure to :\n')
         print_options_list(self.requirement)
         print('\nPlease provide the necessary information about yourself before proceeding with the extraction')

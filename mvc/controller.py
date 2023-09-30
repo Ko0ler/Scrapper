@@ -4,6 +4,7 @@ from .model import APP_NAME,\
     APP_VERSION,\
     APP_AUTHOR,\
     APP_DESCRIPTION,\
+    BANNER,\
     Eligibility,\
     Extraction,\
     USER_NOTE,\
@@ -116,7 +117,7 @@ class Control:
         """
         Display the intro message.
         """
-        self.view_home.intro(APP_NAME, APP_VERSION, APP_AUTHOR, APP_DESCRIPTION)
+        self.view_home.intro(APP_NAME, APP_VERSION, APP_AUTHOR, APP_DESCRIPTION, BANNER)
 
         @user_input_validation()
         def get_user_name():
